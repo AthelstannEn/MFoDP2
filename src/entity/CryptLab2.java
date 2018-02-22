@@ -26,7 +26,7 @@ public class CryptLab2 extends JPanel {
                     outputText = encrypt(key, text);
                     newTextArea.setText(new String(outputText));
                 } else {
-                    JOptionPane.showMessageDialog(CryptLab2.this, "Довжина ключа повина бути рівною довжині текста");
+                    JOptionPane.showMessageDialog(CryptLab2.this, "The length of the key should be equal to the length of the text");
                 }
                 
             }
@@ -41,22 +41,22 @@ public class CryptLab2 extends JPanel {
                     outputText = decrypt(key, text);
                     newTextArea.setText(new String(outputText));
                 } else {
-                    JOptionPane.showMessageDialog(CryptLab2.this, "Довжина ключа повина бути рівною довжині текста");
+                    JOptionPane.showMessageDialog(CryptLab2.this, "The length of the key should be equal to the length of the textа");
                 }
  
             }
         });
-        add(new JLabel("Ключ:"));
+        add(new JLabel("Key:"));
         add(keyArea);
-        add(new JLabel("Вхідний  текст:"));
+        add(new JLabel("Output text"));
         add(textArea);
-        add(new JLabel("Результат:"));
+        add(new JLabel("Resault:"));
         add(newTextArea);
         add(encryptButton);
         add(decryptButton);
  
     }
-    //генератор таблицы Виженера
+    //Vigenera table generator
     private static char[][] genTable() {
         char[][] table = new char[26][26];
  
@@ -74,7 +74,7 @@ public class CryptLab2 extends JPanel {
         }
         return table;
     }
-    //метод шифрования
+    //encryption method
     private static  String encrypt(char[] key, char[] text) {
         char[] nText = new char[text.length];
         int k;
@@ -89,7 +89,7 @@ public class CryptLab2 extends JPanel {
         }
         return new String(nText);
     }
-    //метод расшифровки
+    //decryption method
     private static  String decrypt(char[] key, char[] text) {
         char[] nText = new char[text.length];
         int k;
@@ -112,7 +112,7 @@ public class CryptLab2 extends JPanel {
  
     private static void createAndShowGUI(){
  
-        JFrame window = new JFrame("Шифровка");
+        JFrame window = new JFrame("Encryption");
         window.setSize(new Dimension(400, 210));
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
